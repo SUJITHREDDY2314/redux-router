@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+nav{
+  background-color: aliceblue;
+  padding: 16px 32px;
+}
+nav a {
+  margin-right: 16px;
+}
+nav a.active{
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-2{
+  background-color: gainsboro;
+  margin: 0px 20px;
+}
+.search{
+  margin: 20px;
+} 
+.prodchild{
+  margin: 20px;
+}

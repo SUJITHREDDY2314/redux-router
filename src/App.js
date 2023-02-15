@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./Components/HomePage";
+import About from "./Components/About";
+import Navbar from "./Components/Navbar";
+import OrderSummary from "./Components/OrderSummanry";
+import NoPage from "./Components/NoPage";
+import Products from "./Components/Products";
+import FeaturedProducts from "./Components/FeaturedProducts";
+import NewProducts from "./Components/NewProducts";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="about" element={<About />} />
+        <Route path="order-summary" element={<OrderSummary />} />
+        <Route path="products" element={<Products />}>
+          <Route path="featured" element={<FeaturedProducts />} />
+          <Route path="new" element={<NewProducts />} />
+        </Route>
+        <Route path="*" element={<NoPage />} />
+      </Routes>
     </div>
   );
 }
